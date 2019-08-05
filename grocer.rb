@@ -1,20 +1,20 @@
 def consolidate_cart(cart)
   keys = []
-  consolidate_cart = {}
+  consolidated_cart = {}
   cart.each do |item|
     x.each do |key, value|
       keys << key
-      consolidate_cart[k] = value
+      consolidated_cart[key] = value
       #binding.pry
     end
   end
 
   cart.map do |item|
     x.map do |key, value|
-      consolidate_cart[k][:count] = keys.count(key)
+      consolidated_cart[k][:count] = keys.count(key)
     end
   end
-  consolidate_cart
+  consolidated_cart
 end
 
 def apply_coupons(cart, coupons)
