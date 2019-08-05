@@ -1,17 +1,17 @@
 def consolidate_cart(cart)
-    keys = []
+  keys = []
   consolidate_cart = {}
-  cart.each do |x|
-    x.each do |k, v|
-      keys << k
-      consolidate_cart[k] = v
+  cart.each do |item|
+    x.each do |key, value|
+      keys << key
+      consolidate_cart[k] = value
       #binding.pry
     end
   end
 
-  cart.map do |x|
-    x.map do |k, v|
-      consolidate_cart[k][:count] = keys.count(k)
+  cart.map do |item|
+    x.map do |key, value|
+      consolidate_cart[k][:count] = keys.count(key)
     end
   end
   consolidate_cart
