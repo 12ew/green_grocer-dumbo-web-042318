@@ -40,13 +40,12 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-    cart.each do |name, attributes|
-      if attributes[:clearance] == true
-        new_price = minus_20_percent(attributes[:price])
-        attributes[:price] = new_price
-      end
+   cart.each do |key, value|
+    if value[:clearance] == true
+      discount = value[:price] * 0.2
+      cart[key][:price] -= discount.round(3) 
     end
-  cart
+  end
 end
 
 def checkout(cart, coupons)
