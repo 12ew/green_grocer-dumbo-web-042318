@@ -49,5 +49,29 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  
+  consolidated = consolidate_cart(cart)
+
+  with_coupons = apply_coupons(consolidated, coupons)
+
+  clearance = apply_clearance(with_coupons)
+
+  prices = []
+
+  clearance.map do |key, value|
+      prices << value[:price] * value[:count]
+  end
+
+  i = 0 
+  price = 0
+  while i < prices.size
+    price += prices[i]
+    i += 1
+  end
+
+  if price > 100
+    discount = price * 0.1
+    price -= discount.round(2)
+  end
+
+  price
 end
