@@ -17,7 +17,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-    new_cart = {}
+  new_cart = {}
 
   cart.each do |key, value|
     coupons.each do |x|
@@ -31,7 +31,6 @@ def apply_coupons(cart, coupons)
             :clearance => value[:clearance],
             :count => 1,
           }
-        #binding.pry
         end
       end
     end
