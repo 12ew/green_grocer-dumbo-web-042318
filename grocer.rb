@@ -8,9 +8,9 @@ def consolidate_cart(cart)
     end
   end
 
-  cart.map do |item|
-    x.map do |key, value|
-      consolidated_cart[k][:count] = keys.count(key)
+  cart.map do |items|
+    items.map do |key, value|
+      consolidated_cart[key][:count] = keys.count(key)
     end
   end
   consolidated_cart
