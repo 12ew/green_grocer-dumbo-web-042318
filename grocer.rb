@@ -70,7 +70,7 @@ def checkout(cart, coupons)
 
   if price > 100
     discount = price * 0.1
-    price -= discount.round(2)
+    price -= discount
   end
 
   price
