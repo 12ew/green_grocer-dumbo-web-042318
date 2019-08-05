@@ -1,11 +1,10 @@
 def consolidate_cart(cart)
   keys = []
   consolidated_cart = {}
-  cart.each do |item|
-    x.each do |key, value|
+  cart.each do |items|
+    items.each do |key, value|
       keys << key
       consolidated_cart[key] = value
-      #binding.pry
     end
   end
 
