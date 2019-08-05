@@ -40,7 +40,13 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  # code here
+    cart.each do |name, attributes|
+      if attributes[:clearance] == true
+        new_price = minus_20_percent(attributes[:price])
+        attributes[:price] = new_price
+      end
+    end
+  cart
 end
 
 def checkout(cart, coupons)
